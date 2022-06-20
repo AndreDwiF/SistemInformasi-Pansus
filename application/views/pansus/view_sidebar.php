@@ -4,7 +4,7 @@
             <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="<?php echo base_url('Dashboard') ?>">Admin</a>
+                            <a href="<?php echo base_url('Dashboard') ?>">SI-Data Pansus</a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -43,9 +43,9 @@
                         </li>
 
                         <li class="sidebar-item  ">
-                            <a href="form-layout.html" class='sidebar-link'>
-                                <i class="bi bi-file-earmark-medical-fill"></i>
-                                <span>Form Layout</span>
+                            <a href="<?php echo base_url('auth/logout'); ?>" class='sidebar-link'>
+                            <i class="bi bi-person-fill"></i>                                
+                            <span>Log Out</span>
                             </a>
                         </li>
                     </ul>
@@ -55,3 +55,5 @@
         </div>
    
                     </div>
+
+                    

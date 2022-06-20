@@ -10,7 +10,7 @@
             </div>
             <div class="page-content">
             <section class="row">
-            <div class="col-12 col-lg-9">
+            <div class="col-12 col-lg-10">
                             <div class="form-group">
                                 <!-- Button trigger for insert form modal -->
                                 <a href="" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
@@ -51,7 +51,7 @@
             
                  </div>
                 
-                        <div class="col-12 col-lg-3">
+                        <div class="col-12 col-lg-2">
                         <div class="">
                             <div class="py-4 px-5">
                                 <div class="d-flex align-items-center">
@@ -59,8 +59,8 @@
                                         <img src="assets/images/faces/1.jpg" alt="Face 1">
                                     </div>
                                     <div class="ms-3 name">
-                                        <h5 class="font-bold">Admin</h5>
-                                        <h6 class="text-muted mb-0">@admin23</h6>
+                                        <h5 class="font-bold">Haloo</h5>
+                                        <h6 class="text-muted mb-0"><?php echo "".$this->session->userdata('username'); ?></h6>
                                     </div>
                                 </div>
                             </div>

@@ -9,16 +9,14 @@ class User extends CI_Controller {
 		parent::__construct();
 		$this->load->model('ModelPansus');
 	}
-	
-	public function index()
+    public function index()
 	{
-        $kasus['kasus']= $this->ModelPansus->ambilDatakasusbyID()->result();
-		$this->load->view('pansus/view_pansus',$kasus);
-	}
+		$data['data'] = $this->ModelPansus->getRapat();
+		$data['title'] = $data['title'] = "Home";
+		$data['menu_active'] = "User";
+		$this->load->view('pansus/view_header',$data);
+		$this->load->view('pansus/view_footer');
 
-    // public function index_id()
-	// {
-    //     $kasus['kasus']= $this->ModelPansus->ambilDatakasusbyID()->result();
-	// 	$this->load->view('pansus/view_pansus',$kasus);
-	// }
+		$this->load->view('pansus/view_pansus',$data);
+	}
 }

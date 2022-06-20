@@ -7,6 +7,10 @@ class Pansus extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		if(empty($this->session->userdata('status')))
+		{
+			redirect('auth');
+		}
 		$this->load->model('ModelPansus');
 		$this->load->library('form_validation');
 	}
@@ -14,7 +18,7 @@ class Pansus extends CI_Controller {
 	public function index()
 	{
 		$komisi['data'] = $this->ModelPansus->getKomisi();
-		$data['title'] = $data['title'] = "Kelola Data";
+		$data['title'] = $data['title'] = "Kelola Data | Komisi";
 		$data['menu_active'] = "kelola data";
 		$this->load->view('pansus/view_header',$data);
 		$this->load->view('pansus/view_sidebar',$data);

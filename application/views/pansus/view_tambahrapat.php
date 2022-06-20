@@ -63,8 +63,8 @@
                                         <img src="assets/images/faces/1.jpg" alt="Face 1">
                                     </div>
                                     <div class="ms-3 name">
-                                        <h5 class="font-bold">Admin</h5>
-                                        <h6 class="text-muted mb-0">@admin23</h6>
+                                        <h5 class="font-bold">Haloo</h5>
+                                        <h6 class="text-muted mb-0"><?php echo "".$this->session->userdata('username'); ?></h6>
                                     </div>
                                 </div>
                             </div>

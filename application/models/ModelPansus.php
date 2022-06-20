@@ -85,6 +85,11 @@ class ModelPansus extends CI_Model
           $this->db->update($table,$data);        
         }
 
+        public function authLogin($table,$where)
+        {
+          return $this->db->get_where($table,$where);
+        }
+
   
 }
   // private $_table = "feedback";

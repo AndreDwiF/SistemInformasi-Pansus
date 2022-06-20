@@ -19,7 +19,7 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="stats-icon purple">
-                                                    <i class="bi bi-info-square "></i>
+                                                    <i class="iconly-boldBookmark "></i>
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
@@ -123,8 +123,8 @@
                                         <img src="assets/images/faces/1.jpg" alt="Face 1">
                                     </div>
                                     <div class="ms-3 name">
-                                        <h5 class="font-bold">Admin</h5>
-                                        <h6 class="text-muted mb-0">@admin23</h6>
+                                        <h5 class="font-bold">Haloo</h5>
+                                        <h6 class="text-muted mb-0"><?php echo "".$this->session->userdata('username'); ?></h6>
                                     </div>
                                 </div>
                             </div>
