@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2022 at 09:31 AM
+-- Generation Time: Jun 20, 2022 at 03:58 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -29,9 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL,
-  `email` varchar(50) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
+(1, 'andre', '123');
 
 -- --------------------------------------------------------
 
@@ -86,7 +93,7 @@ CREATE TABLE `rapat` (
 
 INSERT INTO `rapat` (`id_rapat`, `nama_rapat`, `tanggal_rapat`, `id_topik`, `id_komisi`) VALUES
 (29, 'Raperda Jawa Timur', '2022-06-01', 9, 23),
-(30, 'Raperda Jawa Barat', '2022-06-17', 5, 24),
+(30, 'Raperda Jawa Barat', '2022-06-17', 5, 26),
 (31, 'Raperda Jawa Tengah', '2022-06-18', 8, 25);
 
 -- --------------------------------------------------------
@@ -157,7 +164,7 @@ ALTER TABLE `topik`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `komisi`
