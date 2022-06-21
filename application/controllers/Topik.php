@@ -16,7 +16,8 @@ class Topik extends CI_Controller {
 
     public function index()
 	{
-		$data['data'] = $this->ModelPansus->getTopik();
+		$data['data'] = $this->ModelPansus->getTopikjoin();
+		$data['komisi'] = $this->ModelPansus->getKomisi();
 		$data['title'] = $data['title'] = "Kelola Data | Topik";
 		$data['menu_active'] = "kelola data";
 		$this->load->view('pansus/view_header',$data);
@@ -37,12 +38,12 @@ class Topik extends CI_Controller {
 		}
 		else
 		{
-		// $komisi = $this->input->post('komisi');
+		$komisi = $this->input->post('komisi');
 		$namaTopik = $this->input->post('namaTopik');
 
 		$data = array(
 			'nama_topik'=> $namaTopik,
-			// 'id_komisi'=> $komisi
+			'id_komisi'=> $komisi
 		  );
 		  
 		  $this->ModelPansus->tambahDataTopik($data);
@@ -69,11 +70,11 @@ class Topik extends CI_Controller {
 		{
 		$idTopik = $this->input->post('id_topik');
 		$namaTopik = $this->input->post('namaTopik');
-		// $namaKomisi= $this->input->post('namaKomisi');
+		$namaKomisi= $this->input->post('namaKomisi');
 
 		$data = array(
 			'nama_topik'=> $namaTopik,
-			// 'id_komisi'=>$namaKomisi
+			'id_komisi'=>$namaKomisi
 		  );
 		$where = array(
 			'id_topik' => $idTopik
@@ -83,6 +84,22 @@ class Topik extends CI_Controller {
 		  redirect('topik');
 	}
 }
+
+		// public function prosesKategoriTopik()
+		// {
+		
+		// $nama_komisi=$this->input->get('komisi');
+		// $kategori['data']=$this->ModelPansus->getTopikByName($nama_komisi);
+		// $data['data']=$this->ModelPansus->getKategoriTopik($kategori['id_komisi']);
+		// $data['title'] = $data['title'] = "Data Pansus";
+		// $data['menu_active'] = "kelola data";
+		// $this->load->view('pansus/view_header',$data);
+		// $this->load->view('pansus/view_sidebar',$data);
+		// $this->load->view('pansus/view_footer');
+
+		// $this->load->view('pansus/view_kategoriKomisi',$data);
+		// }
+
 	
 
 }

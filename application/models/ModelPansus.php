@@ -90,6 +90,51 @@ class ModelPansus extends CI_Model
           return $this->db->get_where($table,$where);
         }
 
+        public function getTopikjoin()
+        {
+          $this->db->select(['a.nama_komisi','a.id_komisi','b.nama_topik','b.id_topik']);
+          $this->db->from('topik as b');
+          $this->db->join('komisi as a','a.id_komisi=b.id_komisi','left');
+          $this->db->order_by('nama_komisi','asc');
+          $return= $this->db->get('');
+          return $return->result();
+          
+        }
+
+        public function getTopikByName($id)
+        {
+          return $this->db->get_where('komisi',['nama_komisi'=>$id])->row_array();
+          
+        }
+
+        public function getKategoriTopik($id)
+        {
+          $this->db->select(['a.nama_komisi','a.id_komisi','b.nama_topik','b.id_topik']);
+          $this->db->from('topik as b');
+          $this->db->join('komisi as a','a.id_komisi=b.id_komisi','left');
+          $this->db->where('b.id_komisi', $id);
+          $this->db->order_by('nama_topik','asc');
+          $return= $this->db->get('');
+          return $return->result();
+        }
+
+        public function getRapatByName($id)
+        {
+          return $this->db->get_where('topik',['nama_topik'=>$id])->row_array();
+          
+        }
+
+         public function getKategoriRapat($id)
+        {
+          $this->db->select(['a.nama_topik','a.id_topik','b.nama_rapat','b.tanggal_rapat','b.id_rapat']);
+          $this->db->from('rapat as b');
+          $this->db->join('topik as a','a.id_topik=b.id_topik','left');
+          $this->db->where('b.id_topik', $id);
+          $this->db->order_by('nama_rapat','asc');
+          $return= $this->db->get('');
+          return $return->result();
+        }
+
   
 }
   // private $_table = "feedback";

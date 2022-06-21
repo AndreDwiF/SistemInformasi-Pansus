@@ -23,7 +23,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Topik</th>
-                                        <!-- <th>Komisi</th> -->
+                                        <th>Komisi</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -34,7 +34,7 @@
                                     <tr>
                                         <td class="text-bold-500"><?php echo $no++; ?></td>
                                         <td><?php echo $row->nama_topik; ?></td>
-                                        <!-- <td class="text-bold-500"><?php echo $row->nama_komisi; ?></td> -->
+                                        <td class="text-bold-500"><?php echo $row->nama_komisi; ?></td>
                                         <td>
                                         <form action="<?php echo base_url('topik/ProseshapusTopik')?>" method="POST">
                                         <input type="hidden" name="id_topik" value="<?php echo $row->id_topik; ?>">
@@ -90,7 +90,7 @@
                                                     <input type="text" name="namaTopik" placeholder="Nama Topik"class="form-control" required>
                                                 </div>
 
-                                                <!-- <div class="form-group">
+                                                <div class="form-group">
                                                     <label>Komisi</label>
                                                     <select name="komisi" id="" class="form-control" required>
                                                     <option value="" >-PILIH-</option>
@@ -98,7 +98,7 @@
                                                     <option value="<?php echo $row->id_komisi; ?>"><?php echo $row->nama_komisi; ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
-                                                </div> -->
+                                                </div>
 
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-outline-secondary btn-sm"
@@ -141,15 +141,15 @@
                                                     <input type="text" name="namaTopik" placeholder="Nama Topik"class="form-control" value="<?php echo $row->nama_topik; ?>" required>
                                                 </div>
 
-                                                <!-- <div class="form-group">
+                                                <div class="form-group">
                                                     <label>Nama Komisi</label>                                 
                                                     <select name="namaKomisi" id="" class="form-control" required>
-                                                    <option value="<?php echo $row->id_komisi; ?>" ><?php echo $row->nama_komisi; ?></option>
-                                                    <?php foreach($komisi as $row) : ?>
-                                                    <option value="<?php echo $row->id_komisi; ?>"><?php echo $row->nama_komisi; ?></option>
+                                                    <option value="" >-Pilih-</option>
+                                                    <?php foreach($komisi as $data) : ?>
+                                                    <option value="<?php echo $data->id_komisi; ?>"<?php echo $data->id_komisi == $row->id_komisi ? "selected" : null ?>><?php echo $data->nama_komisi; ?></option>
                                                     <?php endforeach; ?>
                                                 </select>                                                
-                                            </div> -->
+                                            </div>
                                                 
                                                 
                                                 <div class="modal-footer">

@@ -23,7 +23,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold"><?php echo $row->nama_komisi; ?></h6>
+                                                <a href="<?php echo base_url('KategoriTopik?komisi=') .$row->nama_komisi; ?>" class="text-muted font-semibold"><?php echo $row->nama_komisi; ?></a>
                                             </div>
                                         </div>
                                     </div>

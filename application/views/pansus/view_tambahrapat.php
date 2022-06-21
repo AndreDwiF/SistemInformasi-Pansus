@@ -43,7 +43,7 @@
                                         <form action="<?php echo base_url('rapat/ProseshapusRapat')?>" method="POST">
                                         <input type="hidden" name="id_rapat" value="<?php echo $row->id_rapat; ?>">
                                         <button class= "btn rounded-pill btn-outline-danger btn-sm" onclick="return confirm('Apakah anda yakin ?!');">Hapus</button>
-                                        <a href="" class="btn rounded-pill btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#inlineFormEdit<?php echo $row->id_rapat;?>">Edit</button>
+                                        <a href="" class="btn rounded-pill btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#inlineFormEdit<?php echo $row->id_rapat;?>">Edit</a>
                                     </form>
                                     </td>
                                     </tr>
