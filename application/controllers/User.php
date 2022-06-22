@@ -7,13 +7,17 @@ class User extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		if(empty($this->session->userdata('status')))
+		{
+			redirect('auth');
+		}
 		$this->load->model('ModelPansus');
 	}
-    public function index()
+	public function index()
 	{
-		$data['data'] = $this->ModelPansus->getRapat();
-		$data['title'] = $data['title'] = "Home";
-		$data['menu_active'] = "User";
+		$data['komisi']= $this->ModelPansus->getKomisi();
+		$data['title'] = $data['title'] = "Dashboard | User";
+		$data['menu_active'] = "Dashboard";
 		$this->load->view('pansus/view_header',$data);
 		$this->load->view('pansus/view_footer');
 

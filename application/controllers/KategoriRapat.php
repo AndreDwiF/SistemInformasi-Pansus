@@ -18,7 +18,7 @@ class KategoriRapat extends CI_Controller {
 		$nama_topik=$this->input->get('topik');
 		$kategori=$this->ModelPansus->getRapatByName($nama_topik);
 		$data['data']=$this->ModelPansus->getKategoriRapat($kategori['id_topik']);
-		$data['title'] = "Data Pansus";
+		$data['title'] = "Data Pansus | Rapat";
 		$data['menu_active'] = "kelola data";
 		$this->load->view('pansus/view_header',$data);
 		$this->load->view('pansus/view_sidebar',$data);

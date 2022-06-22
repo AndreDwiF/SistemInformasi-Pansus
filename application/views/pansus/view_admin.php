@@ -7,6 +7,7 @@
 
             <div class="page-heading">
                 <h3>Data Pansus</h3>
+                <p class="text-subtitle text-muted">Lihat Data Pansus</p>
             </div>
             <div class="page-content">
                 <section class="row">

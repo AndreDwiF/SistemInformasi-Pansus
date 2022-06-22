@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class KategoriTopik extends CI_Controller {
+class KategoriTopikUser extends CI_Controller {
 	
 
 	public function __construct()
@@ -21,9 +21,8 @@ class KategoriTopik extends CI_Controller {
 		$data['title'] = "Data Pansus | Topik";
 		$data['menu_active'] = "kelola data";
 		$this->load->view('pansus/view_header',$data);
-		$this->load->view('pansus/view_sidebar',$data);
 		$this->load->view('pansus/view_footer');
 
-		$this->load->view('pansus/view_kategoriTopik',$data);
+		$this->load->view('user/view_kategoriTopikUser',$data);
 	}
 }

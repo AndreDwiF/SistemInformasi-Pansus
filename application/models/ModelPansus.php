@@ -89,6 +89,11 @@ class ModelPansus extends CI_Model
         {
           return $this->db->get_where($table,$where);
         }
+        
+        public function authLoginUser($table,$where)
+        {
+          return $this->db->get_where($table,$where);
+        }
 
         public function getTopikjoin()
         {

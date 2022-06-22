@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class KategoriTopik extends CI_Controller {
+class KategoriRapatUser extends CI_Controller {
 	
 
 	public function __construct()
@@ -15,15 +15,15 @@ class KategoriTopik extends CI_Controller {
 	}
     public function index()
 	{
-		$nama_komisi=$this->input->get('komisi');
-		$kategori=$this->ModelPansus->getTopikByName($nama_komisi);
-		$data['data']=$this->ModelPansus->getKategoriTopik($kategori['id_komisi']);
-		$data['title'] = "Data Pansus | Topik";
+		$nama_topik=$this->input->get('topik');
+		$kategori=$this->ModelPansus->getRapatByName($nama_topik);
+		$data['data']=$this->ModelPansus->getKategoriRapat($kategori['id_topik']);
+		$data['title'] = "Data Pansus | Rapat";
 		$data['menu_active'] = "kelola data";
 		$this->load->view('pansus/view_header',$data);
 		$this->load->view('pansus/view_sidebar',$data);
 		$this->load->view('pansus/view_footer');
 
-		$this->load->view('pansus/view_kategoriTopik',$data);
+		$this->load->view('user/view_kategoriRapatUser',$data);
 	}
 }

@@ -27,9 +27,9 @@
                                 <span>Kelola Data</span>
                             </a>
                             <ul class="submenu">
-                                <li class="submenu-item ">
+                                <!-- <li class="submenu-item ">
                                     <a href="<?php echo base_url('Pansus'); ?>">Komisi</a>
-                                </li>
+                                </li> -->
 
                                 <li class="submenu-item ">
                                     <a href="<?php echo base_url('Rapat'); ?>">Rapat</a>

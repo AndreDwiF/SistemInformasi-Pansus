@@ -43,7 +43,19 @@ class Auth extends CI_Controller {
               redirect('dashboard');
    
           }else{
-              redirect('auth');
+			
+			$cekUser = $this->ModelPansus->authLoginUser('user',$data)->num_rows();
+			if($cekUser > 0){
+
+				$data_session = array(
+					'username' => $username,
+					'status' => "login"
+					);
+					$this->session->set_userdata($data_session);
+					redirect('User');
+			}else{
+				redirect('auth');
+			}
           }
       }
       
