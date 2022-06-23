@@ -7,10 +7,7 @@ class KategoriTopik extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		if(empty($this->session->userdata('status')))
-		{
-			redirect('auth');
-		}
+		sudah_login();
 		$this->load->model('ModelPansus');
 	}
     public function index()
