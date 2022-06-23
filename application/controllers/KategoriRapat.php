@@ -7,7 +7,10 @@ class KategoriRapat extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		sudah_login();
+		if(!$this->session->userdata('username'))
+		{
+			redirect('auth');
+		}
 		$this->load->model('ModelPansus');
 	}
     public function index()
